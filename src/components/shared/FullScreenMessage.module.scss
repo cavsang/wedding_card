@@ -1,0 +1,50 @@
+
+.container{
+    /* 화면을 꽉채우는 방법. */
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    /* 정가운데 정렬. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.ico-heart{
+    fill: var(--red);
+    width: 60px;
+    height: 60px;
+
+    animation: heart 1.2s infinite linear;
+
+}
+
+@keyframes heart {
+    0%{
+        transform: scale(0.95);
+    }
+    5%{
+        transform: scale(1.1);
+    }
+    38%{
+        transform: scale(0.85);
+    }
+    45%{
+        transform: scale(1);
+    }
+    60%{
+        transform: scale(0.95);
+    }
+    100%{
+        transform: scale(0.9);
+    }
+}
+
+.ico-error{
+    
+}

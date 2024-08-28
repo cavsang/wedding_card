@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'NanumGeumEunBoHwa';
+    src:url('../assets/fonts/NanumGeumEunBoHwa.woff2') format('woff2'),
+    //만약 위에 적용이 안되었다면 밑에 woff를 사용해라.
+    url('../assets/fonts/NanumGeumEunBoHwa.woff') format('woff'),
+    //이것도 안되면 모든 운영체제 지원이되는 ttf로
+    url('../assets/fonts/NanumGeumEunBoHwa.ttf') format('truetype');
+}
