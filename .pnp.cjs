@@ -39,6 +39,7 @@ const RAW_RUNTIME_STATE =
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
           ["classnames", "npm:2.5.1"],\
           ["craco-alias", "npm:3.0.1"],\
+          ["date-fns", "npm:3.6.0"],\
           ["eslint", "npm:8.47.0"],\
           ["eslint-config-prettier", "virtual:3de6f7e7bfeb4ca3b64ba48a7c21ea329858fba9504a61faa2d142a9edc0aa44122207aa6f8389e6ffc03dc0219061cf394a7e48b633f523d52c3b0829f4ad92#npm:9.0.0"],\
           ["eslint-config-react-app", "virtual:3de6f7e7bfeb4ca3b64ba48a7c21ea329858fba9504a61faa2d142a9edc0aa44122207aa6f8389e6ffc03dc0219061cf394a7e48b633f523d52c3b0829f4ad92#npm:7.0.1"],\
@@ -8102,6 +8103,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["date-fns", [\
+      ["npm:3.6.0", {\
+        "packageLocation": "../../../C:/Users/cavsa/AppData/Local/Yarn/Berry/cache/date-fns-npm-3.6.0-e59d980978-10c0.zip/node_modules/date-fns/",\
+        "packageDependencies": [\
+          ["date-fns", "npm:3.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["debug", [\
       ["npm:2.6.9", {\
         "packageLocation": "../../../C:/Users/cavsa/AppData/Local/Yarn/Berry/cache/debug-npm-2.6.9-7d4cb597dc-10c0.zip/node_modules/debug/",\
@@ -13707,6 +13717,7 @@ const RAW_RUNTIME_STATE =
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
           ["classnames", "npm:2.5.1"],\
           ["craco-alias", "npm:3.0.1"],\
+          ["date-fns", "npm:3.6.0"],\
           ["eslint", "npm:8.47.0"],\
           ["eslint-config-prettier", "virtual:3de6f7e7bfeb4ca3b64ba48a7c21ea329858fba9504a61faa2d142a9edc0aa44122207aa6f8389e6ffc03dc0219061cf394a7e48b633f523d52c3b0829f4ad92#npm:9.0.0"],\
           ["eslint-config-react-app", "virtual:3de6f7e7bfeb4ca3b64ba48a7c21ea329858fba9504a61faa2d142a9edc0aa44122207aa6f8389e6ffc03dc0219061cf394a7e48b633f523d52c3b0829f4ad92#npm:7.0.1"],\
