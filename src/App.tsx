@@ -5,6 +5,7 @@ import FullScreenMessage from './components/shared/FullScreenMessage'
 import Heading from '@/components/shared/sections/Heading'
 import Video from '@/components/shared/sections/Video'
 import {Wedding} from '@/models/wedding'
+import ImageGally from './components/shared/sections/ImageGally'
 
 const cx = classNames.bind(styles)
 
@@ -46,10 +47,14 @@ function App() {
   }
 
 
+  const{date, galleryImages} = wedding;
+  
+
   return (
     <div className={cx('container')}>
-        <Heading date={wedding.date}/>
+        <Heading date={date}/>
         <Video />
+        <ImageGally images={galleryImages} />
         {JSON.stringify(wedding)}
     </div>
   )

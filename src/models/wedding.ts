@@ -2,10 +2,16 @@ export interface Wedding{
     id: number
     date: string
     location: Location
-    groom: Person
+    groom: Person & {parents: Person[]}
+    bride: Person & {parents: Person[]}
+    message: {
+        intro: string
+        invitation: string
+    }
+    galleryImages: string[]
 }
 
-interface Location{
+export interface Location{
     lat: number
     lng: number
     name: string
@@ -16,17 +22,15 @@ interface Location{
         metro: string[]
         bus: string[]
     }
-
 }
 
-interface Person{
+export interface Person{
     name: string
     phoneNumber: string
     account: Account
-    parents: Person[]
 }
 
-interface Account{
+export interface Account{
     bankName: string
     accountNumber: string
     kakaopayLink?: string
