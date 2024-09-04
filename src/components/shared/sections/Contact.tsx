@@ -46,20 +46,20 @@ function ContactInfo({ name, account, phoneNumber }: Person) {
         <span>{name}</span>
       </div>
       
-    <ul className={cx('wrap-buttons')}>
-        <li className={cx('button')}><a href={`tel:${phoneNumber}`}>전화</a></li>
+      <ul className={cx('wrap-buttons')}>
+          <li className={cx('button')}><a href={`tel:${phoneNumber}`}>전화</a></li>
 
-        <CopyToClipboard text={`${account.bankName} ${account.accountNumber}`} onCopy={() => alert('복사가 완료되었습니다.')}>
-            <li className={cx('button')}>복사</li>
-        </CopyToClipboard>
-        {account?.kakaopayLink && (
-            <li>
-                <a href={account?.kakaopayLink} className={cx('button')} target='_blank' rel='noreferrer'>
-                    송금
-                </a>
-            </li>
-        )}
-    </ul>
+          <CopyToClipboard text={`${account.bankName} ${account.accountNumber}`} onCopy={() => alert('복사가 완료되었습니다.')}>
+              <li className={cx('button')}>복사</li>
+          </CopyToClipboard>
+          {account?.kakaopayLink && (
+              <li>
+                  <a href={account?.kakaopayLink} className={cx('button')} target='_blank' rel='noreferrer'>
+                      송금
+                  </a>
+              </li>
+          )}
+      </ul>
       
     </div>
   )

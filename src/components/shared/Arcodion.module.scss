@@ -22,11 +22,15 @@
         padding: 0 10px;
         background-color: lightgray;
         font-size: 25px;
-        display: none;
+        max-height: 0px;
+        visibility: hidden;
+        transition: all .5s ease-in-out;
     }
 
     .open{
-        display: block;
+        max-height: 500px;
+        visibility: visible;
+        transition: all 1s ease-in-out;
         
     }
 }
