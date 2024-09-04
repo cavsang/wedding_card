@@ -10,6 +10,7 @@ import Intro from './components/shared/sections/Intro'
 import Invitation from './components/shared/sections/Invitation'
 import Calendar from '@/components/shared/sections/Calendar'
 import Map from '@/components/shared/sections/Map'
+import Contact from './components/shared/sections/Contact'
 
 const cx = classNames.bind(styles)
 
@@ -52,7 +53,6 @@ function App() {
 
 
   const{date, galleryImages} = wedding;
-  
 
   return (
     <div className={cx('container')}>
@@ -62,8 +62,9 @@ function App() {
         <Video />
         <ImageGally images={galleryImages} />
         <Calendar date={date}/>
-        <Map />
-        {JSON.stringify(wedding)}
+        <Map location={wedding.location}/>
+        <Contact groom={wedding.groom} bride={wedding.bride}/>
+        {JSON.stringify(wedding)} 
     </div>
   )
 }

@@ -1,0 +1,33 @@
+.wrap-arcodion{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid beige;
+        background-color: beige;
+        border-radius: 8px;
+        padding: 0 10px;
+        height: 30px;
+        align-items: center;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .contents{
+        padding: 0 10px;
+        background-color: lightgray;
+        font-size: 25px;
+        display: none;
+    }
+
+    .open{
+        display: block;
+        
+    }
+}
+

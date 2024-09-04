@@ -2,8 +2,8 @@ export interface Wedding{
     id: number
     date: string
     location: Location
-    groom: Person & {parents: Person[]}
-    bride: Person & {parents: Person[]}
+    groom: PersonInfo
+    bride: PersonInfo
     message: {
         intro: string
         invitation: string
@@ -22,6 +22,10 @@ export interface Location{
         metro: string[]
         bus: string[]
     }
+}
+
+export interface PersonInfo extends Person {
+    parents: Person[]
 }
 
 export interface Person{
