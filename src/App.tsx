@@ -65,7 +65,7 @@ function App() {
         <Calendar date={date}/>
         <Map location={wedding.location}/>
         <Contact groom={wedding.groom} bride={wedding.bride}/>
-        <Share />
+        <Share groomName={wedding.groom.name} brideName={wedding.bride.name} date={date}/> 
     </div>
   )
 }
