@@ -4,8 +4,8 @@
     "**/.pnp.*": true
   },
   "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.nodePath": ".yarn/sdks",

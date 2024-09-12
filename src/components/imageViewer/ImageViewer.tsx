@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind'
 import styles from './ImageViewer.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Dimmed from '@/components/shared/Dimmed'
 
 import 'swiper/css'
 import './swiper.css'
@@ -25,7 +26,7 @@ export default function ImageViewer({
     
     return (
         //modal에서 깔리는 배경화면같은걸 dimmed라고한다.
-        <div className={cx('dimmed')}>
+        <Dimmed>
             <button className={cx('closeBtn')} type='button' onClick={onImgClose}>X</button>
             <Swiper spaceBetween={20} slidesPerView={1} loop={true} initialSlide={selectedIdx} >
             {images.map((src, idx) => {
@@ -36,7 +37,7 @@ export default function ImageViewer({
                 )
             })}
             </Swiper>
-        </div>
+        </Dimmed>
         )
     
 }
