@@ -1,0 +1,50 @@
+.wrap-modal{
+    //위로 띄울거기때문에 absolute
+    position: absolute; 
+
+    //중앙정렬
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1001;
+
+
+    .wrap-body{
+        width: 320px;
+
+        .wrap-content{
+            padding: 18px;
+
+            .txt-title{
+                font-size: 20px;
+                font-weight: bold; 
+                margin-bottom: 18px;
+            }
+        }
+
+        .wrap-buttons{
+            display: flex;
+
+            button{
+                flex: 1; //1:1로
+                font-size: 17px;
+                padding: 15px 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            button:nth-child(1){
+                background-color: var(--beige);
+            }
+
+            button:nth-child(2){
+                background-color: var(--black);
+                color: white;
+            }
+        }
+    }
+}
