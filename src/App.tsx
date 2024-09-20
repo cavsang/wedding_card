@@ -13,6 +13,7 @@ import Map from '@/components/shared/sections/Map'
 import Contact from './components/shared/sections/Contact'
 import Share from './components/shared/sections/Share'
 import Modal from './components/shared/Modal'
+import AttendCountModal from './components/AttendCountModal'
 
 const cx = classNames.bind(styles)
 
@@ -73,17 +74,8 @@ function App() {
         date={date}
       />
 
-      <Modal
-        body={
-          <div>
-            <input></input>
-          </div>
-        }
-        open={true}
-        title="모달"
-        onLeftButtonClick={() => console.log('확인')} 
-        onRightButtonClick={() => console.log('닫기')}
-      />
+
+    <AttendCountModal wedding={wedding}/>
     </div>
   )
 }
