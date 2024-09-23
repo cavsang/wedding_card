@@ -5,4 +5,6 @@
     url('../assets/fonts/NanumGeumEunBoHwa.woff') format('woff'),
     //이것도 안되면 모든 운영체제 지원이되는 ttf로
     url('../assets/fonts/NanumGeumEunBoHwa.ttf') format('truetype');
+
+    font-display: swap;
 }
