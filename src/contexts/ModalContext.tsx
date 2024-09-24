@@ -1,5 +1,5 @@
 import Modal from "@/components/shared/Modal"
-import { ComponentProps, createContext, useContext, useState } from "react"
+import { ComponentProps, createContext, useCallback, useContext, useMemo, useState } from "react"
 import { createPortal } from "react-dom"
 
 
@@ -30,20 +30,22 @@ export function ModalContext({children}:{children: React.ReactNode}){
     const [modalState, setModalState] = useState<ModalProps>(defaultValues)
 
     const $portal_root = document.getElementById('root-portal');
-
-    const open = (options:ModalOptions) => {
+    
+    
+    const open = useCallback((options:ModalOptions) => {
         setModalState({...options, open: true})
-    }
-    const close = () => {
+    },[])
+
+    const close = useCallback(() => {
         setModalState(defaultValues)
-    }
+    },[])
 
     //context api는 상태가 없데이트되면 하위의자식들을 다 렌더링하는 성능적으로
     //별로안좋은게 있다.
-    const values={
+    const values= useMemo(() => ({
         open,
         close,
-    }
+    }),[open, close])
 
     return (
         <Context.Provider value={values}>

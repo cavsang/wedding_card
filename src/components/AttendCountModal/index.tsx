@@ -49,7 +49,6 @@ export default function AttendCountModal({wedding}:{wedding: Wedding}){
                 close()
             },
         })
-    },[]) // eslint-disable-line
-    //위의 eslint~line 주석을하면 eslint에서 체크를안함.
+    },[open, close, wedding]) 
     return  null
 }
