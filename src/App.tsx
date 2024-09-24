@@ -21,6 +21,8 @@ function App() {
   const [wedding, setWedding] = useState<Wedding | null>()
   const [err, setErr] = useState(false)
 
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
     //비동기 해결방법, 1.callback, 2.promise, 3.async/await
     fetch('http://localhost:8888/wedding')
@@ -60,6 +62,11 @@ function App() {
 
   return (
     <div className={cx('container')}>
+      <button type="button" style={
+        {position: 'fixed',top: 0}
+      } onClick={() => {
+        setCount((prev) => prev + 1)
+      }}>+ {count}</button>
       <Heading date={date} />
       <Intro wedding={wedding} />
       <Invitation message={wedding?.message?.invitation} />
