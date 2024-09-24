@@ -15,7 +15,9 @@ module.exports={
     webpack:{
         plugins:{
             add:[
-                new FontPreloadPlugin()
+                new FontPreloadPlugin({
+                    extensions:['woff2']
+                })
             ]
         }
     }
