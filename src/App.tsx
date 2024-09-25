@@ -14,46 +14,21 @@ import Contact from './components/shared/sections/Contact'
 import Share from './components/shared/sections/Share'
 import Modal from './components/shared/Modal'
 import AttendCountModal from './components/AttendCountModal'
+import getFetch from './api/wedding'
+import getWeddingFetch from './api/wedding'
+import { useWedding } from './hooks/useWedding'
 
 const cx = classNames.bind(styles)
 
 function App() {
-  const [wedding, setWedding] = useState<Wedding | null>()
-  const [err, setErr] = useState(false)
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    //비동기 해결방법, 1.callback, 2.promise, 3.async/await
-    fetch('http://localhost:8888/wedding')
-      .then((response) => {
-        if (response.ok === false) {
-          throw new Error('청첩장정보 불러오다 오류')
-        }
-
-        return response.json()
-        //setWedding(response.json()) //이게안됨 그래서 밑의 then()으로...
-      })
-      .then((data) => {
-        setWedding(data)
-      })
-      .catch((e) => {
-        console.log('에러발생', e)
-        setErr(true)
-      })
-      .finally(() => {
-        //promise에도 finally가있구나.
-      })
-  }, []) //의존성을 비우면 최초에 1번만 호출
+  const {wedding, err} = useWedding() //custom hook
 
   if (err) {
     return <FullScreenMessage type="error" />
   }
-
-  if (!wedding) {
-    return <FullScreenMessage type="loading" />
-  }
-
   if (!wedding) {
     return null
   }
@@ -62,11 +37,15 @@ function App() {
 
   return (
     <div className={cx('container')}>
-      <button type="button" style={
-        {position: 'fixed',top: 0}
-      } onClick={() => {
-        setCount((prev) => prev + 1)
-      }}>+ {count}</button>
+      <button
+        type="button"
+        style={{ position: 'fixed', top: 0 }}
+        onClick={() => {
+          setCount((prev) => prev + 1)
+        }}
+      >
+        + {count}
+      </button>
       <Heading date={date} />
       <Intro wedding={wedding} />
       <Invitation message={wedding?.message?.invitation} />
@@ -81,8 +60,7 @@ function App() {
         date={date}
       />
 
-
-    <AttendCountModal wedding={wedding}/>
+      <AttendCountModal wedding={wedding} />
     </div>
   )
 }

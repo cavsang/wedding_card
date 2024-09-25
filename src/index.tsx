@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App'
+import FullScreenMessage from './components/shared/FullScreenMessage'
 import { ModalContext } from './contexts/ModalContext'
 import reportWebVitals from './reportWebVitals'
 
 import './scss/global.scss'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+const queryClient = new QueryClient()
+
 root.render(
   <React.StrictMode>
-    <ModalContext>
-      <App />
-    </ModalContext>
+    <QueryClientProvider client={queryClient}>
+      <ModalContext>
+        <Suspense fallback={<FullScreenMessage type='loading'/>}>
+          <App />
+        </Suspense>
+      </ModalContext>
+    </QueryClientProvider>
   </React.StrictMode>,
 )
 

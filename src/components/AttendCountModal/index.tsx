@@ -12,11 +12,9 @@ export default function AttendCountModal({wedding}:{wedding: Wedding}){
     const ref = useRef<HTMLInputElement>(null)
     
     useEffect(() => {
-
         if(haveSeenModal){
             return
         }
-
         open({
             title: `현재 참석자 ${wedding.attendCount} 명`,
             body: (
@@ -26,11 +24,9 @@ export default function AttendCountModal({wedding}:{wedding: Wedding}){
                 </div>
             ),
             onLeftButtonClick: async () => {
-
                 if(!ref.current){
                     return 
                 }
-
                 await fetch('',{
                     method: 'PUT',
                     body: JSON.stringify({
@@ -49,6 +45,7 @@ export default function AttendCountModal({wedding}:{wedding: Wedding}){
                 close()
             },
         })
-    },[open, close, wedding]) 
+    },[]) // eslint-disable-line
+    //위의 eslint~line 주석을하면 eslint에서 체크를안함.
     return  null
 }
